@@ -3,7 +3,7 @@
 def remove_char_at(string, n):
     # Check if n is negative and adjust it to a positive index
     if n < 0:
-        n = len(string) + n
+        return string
 
     # Initialize an empty string to store the modified result
     result = ""

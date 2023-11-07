@@ -22,4 +22,8 @@ void free_listint(listint_t *head);
 
 int is_palindrome(listint_t **head);
 
+int len(listint_t **head);
+
+listint_t *naviguate(listint_t *head, int len);
+
 #endif /* LISTS_H */

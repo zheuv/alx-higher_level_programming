@@ -2,10 +2,7 @@
 
 def square_matrix_simple(matrix=[]):
     matrix2 = []
-    square = lambda x : x ** 2
-
     for i in matrix:
-        matrix2.append(list(map(square, i)))
+        matrix2.append(list(map(lamba x: x ** 2, i)))
 
     return matrix2
-

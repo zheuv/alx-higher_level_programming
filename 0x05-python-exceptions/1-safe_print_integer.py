@@ -9,5 +9,3 @@ def printint(integer):
     else:
         print()
         return True
-
-printint(5)

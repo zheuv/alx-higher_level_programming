@@ -2,11 +2,8 @@
 
 def printint(integer):
     try:
-        if not isinstance(integer, int):
-            raise TypeError
-
         print("{:d}".format(integer))
-    except TypeError:
+    except ValueError:
         return False
     else:
         return True

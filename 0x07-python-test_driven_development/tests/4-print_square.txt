@@ -1,9 +1,3 @@
-The ``4-print_square`` module
-======================
-
-Using ``print_square``
--------------------
-
 Importing the function from the module:
 	>>> print_square = __import__("4-print_square").print_square
 

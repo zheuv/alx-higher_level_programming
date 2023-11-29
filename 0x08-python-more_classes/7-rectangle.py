@@ -70,15 +70,3 @@ class Rectangle:
     def __repr__(self):
         """returns a string representation of the rectangle for reproduction"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-    
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """returns the biggest rectangle based on the area"""
-        if type(rect_1) not Rectangle:
-            raise TypeError ("rect_1 must be an instance of Rectangle")
-        if type(rect_2) not Rectangle:
-            raise TypeError ("rect_2 must be an instance of Rectangle")
-        if rect_1.area() < rect_2.area():
-            return rect_2
-        return rect_1
-

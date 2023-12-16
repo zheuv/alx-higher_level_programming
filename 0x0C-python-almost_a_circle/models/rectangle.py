@@ -89,8 +89,9 @@ class Rectangle(Base):
             [print(" ", end="") for x in range(self.x)]
             [print("#", end="") for w in range(self.width)]
             print("")
+    
     def update(self, *args):
-            """Update the Rectangle.
+        """Update the Rectangle.
         Args:
             *args (ints): New attribute values.
                 - 1st argument represents id attribute
@@ -113,6 +114,7 @@ class Rectangle(Base):
                 self.y = arg
             flag += 1
 
+    
     def __str__(self):
         """Return the print() and str() representation of the Rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,

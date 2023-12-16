@@ -28,8 +28,8 @@ class Square(Rectangle):
     def size(self, value):
         self.width = value
         self.height = value
-    def update(self, *args, **kwargs):
 
+    def update(self, *args, **kwargs):
         """Update the Square.
         Args:
             *args (ints): New attribute values.
@@ -61,8 +61,8 @@ class Square(Rectangle):
                     self.x = value
                 elif key == "y":
                     self.y = value
-    def to_dictionary(self):
 
+    def to_dictionary(self):
         """Return the dictionary representation of a Rectangle."""
         return {
             "id": self.id,

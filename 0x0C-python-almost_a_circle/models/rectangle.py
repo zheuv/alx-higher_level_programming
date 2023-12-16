@@ -127,8 +127,8 @@ class Rectangle(Base):
                     self.x = v
                 elif k == "y":
                     self.y = v
-    def to_dictionary(self):
 
+    def to_dictionary(self):
         """Return the dictionary representation of a Rectangle."""
         return {
             "id": self.id,

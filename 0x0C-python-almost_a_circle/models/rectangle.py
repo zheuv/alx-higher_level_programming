@@ -89,7 +89,7 @@ class Rectangle(Base):
             [print(" ", end="") for x in range(self.x)]
             [print("#", end="") for w in range(self.width)]
             print("")
-    
+
     def update(self, *args, **kwargs):
         """Update the Rectangle.
         Args:
@@ -115,7 +115,6 @@ class Rectangle(Base):
                 elif flag == 4:
                     self.y = arg
                 flag += 1
-        
         elif kwargs and len(kwargs) != 0:
             for k, v in kwargs.items():
                 if k == "id":
@@ -129,7 +128,6 @@ class Rectangle(Base):
                 elif k == "y":
                     self.y = v
 
-    
     def __str__(self):
         """Return the print() and str() representation of the Rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,

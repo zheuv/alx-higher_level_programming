@@ -90,7 +90,15 @@ class Rectangle(Base):
             [print("#", end="") for w in range(self.width)]
             print("")
     def update(self, *args):
-    
+            """Update the Rectangle.
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents width attribute
+                - 3rd argument represent height attribute
+                - 4th argument represents x attribute
+                - 5th argument represents y attribute
+        """
         flag = 0
         for arg in args:
             if flag == 0:

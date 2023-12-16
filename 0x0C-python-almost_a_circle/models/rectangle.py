@@ -90,7 +90,7 @@ class Rectangle(Base):
             [print("#", end="") for w in range(self.width)]
             print("")
     
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update the Rectangle.
         Args:
             *args (ints): New attribute values.
@@ -99,20 +99,35 @@ class Rectangle(Base):
                 - 3rd argument represent height attribute
                 - 4th argument represents x attribute
                 - 5th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
         """
-        flag = 0
-        for arg in args:
-            if flag == 0:
-                self.id = arg
-            elif flag == 1:
-                self.width = arg
-            elif flag == 2:
-                self.height = arg
-            elif flag == 3:
-                self.x = arg
-            elif flag == 4:
-                self.y = arg
-            flag += 1
+        if args and len(args) != 0:
+            flag = 0
+            for arg in args:
+                if flag == 0:
+                    self.id = arg
+                elif flag == 1:
+                    self.width = arg
+                elif flag == 2:
+                    self.height = arg
+                elif flag == 3:
+                    self.x = arg
+                elif flag == 4:
+                    self.y = arg
+                flag += 1
+        
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
 
     
     def __str__(self):

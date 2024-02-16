@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" a Python script that lists the cities and their states in the hbtn_0e_0_usa db """
+""" a Python script that lists the cities and their
+states in the hbtn_0e_0_usa db """
 
 if __name__ == "__main__":
     import MySQLdb

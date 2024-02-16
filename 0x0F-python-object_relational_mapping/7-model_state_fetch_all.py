@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" this script prints the states using ORM """
 from model_state import Base, State
 import sys
 from sqlalchemy import (create_engine)

@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """ this script prints the states with the letter a using ORM """
-from model_state import Base, State
 import sys
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
+from sqlalchemy import create_engine, select, text, bindparam
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -12,12 +11,13 @@ if __name__ == "__main__":
         ),
         pool_pre_ping=True,
     )
-    Session = sessionmaker(bind=engine)
-    session = Session()
-
-    # Query the states with names containing the letter 'a' and order by id
-    for state in session.query(State).filter(State.name.like('%a%'))\
-                                     .order_by(State.id).all():
-        print("{}: {}".format(state.id, state.name))
+    state_name = sys.argv[4]
+    with engine.connect() as connection:
+        query = select(State).where(State.name == state_name)
+        states = connection.execute(query).first()
+        if states:
+            print(states.id)
+        else:
+            print("Not found")
 
     engine.dispose()

@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """ the implementation of the State class """
 
-import SQLAlchemy
-from SQLAlchemy import Column, String, Integer
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, String, Integer
 
-Base = SQLAlchemy.ext.declarative_base()
+Base = declarative_base()
 
 class State(Base):
     __tablename__ = "states"

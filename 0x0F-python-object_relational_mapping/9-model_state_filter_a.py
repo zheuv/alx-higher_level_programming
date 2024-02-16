@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" this script prints the states using ORM """
+""" this script prints the states with the letter a using ORM """
 from model_state import Base, State
 import sys
 from sqlalchemy import (create_engine)
@@ -13,6 +13,7 @@ if __name__ == "__main__":
     )
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state in session.query(State).filter(State.name.like('%a%')).all():
+    for state in session.query(State).filter(State.name.like('%a%'))./
+    order_by(State.id).all():
         print("{}: {}".format(state.id, state.name))
     engine.dispose()

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" this scripts prints the first row infos """
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
@@ -16,9 +16,8 @@ if __name__ == "__main__":
     session = Session()
     first = session.query(State).first()
     if first:
-        print ("{}: {}".format(first.id, first.name))
+        print("{}: {}".format(first.id, first.name))
 
-    else: 
+    else:
         pass
     engine.dispose()
-

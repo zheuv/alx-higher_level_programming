@@ -2,8 +2,9 @@
 """ this script prints the states with the letter a using ORM """
 from model_state import Base, State
 import sys
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
 if __name__ == "__main__":
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
@@ -13,7 +14,10 @@ if __name__ == "__main__":
     )
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state in session.query(State).filter(State.name.like('%a%'))./
-    order_by(State.id).all():
+
+    # Query the states with names containing the letter 'a' and order by id
+    for state in session.query(State).filter(State.name.like('%a%'))\
+                                     .order_by(State.id).all():
         print("{}: {}".format(state.id, state.name))
+
     engine.dispose()

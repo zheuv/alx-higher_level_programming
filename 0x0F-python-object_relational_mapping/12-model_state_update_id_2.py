@@ -3,7 +3,7 @@
 
 from model_state import Base, State
 from sqlalchemy import (create_engine)
-from sqlachemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker
 import sys
 
 if __name__ == "__main__":

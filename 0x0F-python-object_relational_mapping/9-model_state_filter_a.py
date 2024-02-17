@@ -2,7 +2,8 @@
 """ this script prints the states with the letter a using ORM """
 import sys
 from model_state import Base, State
-from sqlalchemy import create_engine, select, text, bindparam
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -11,13 +12,8 @@ if __name__ == "__main__":
         ),
         pool_pre_ping=True,
     )
-    state_name = sys.argv[4]
-    with engine.connect() as connection:
-        query = select(State).where(State.name == state_name)
-        states = connection.execute(query).first()
-        if states:
-            print(states.id)
-        else:
-            print("Not found")
-
+    Session = sessionmaker(bind=engine)
+    session = Session(engine)
+    for instance in session.query(State).filter(State.name.like('%a%')).all():
+        print("{}: {}".format(instance.id, instance.name))
     engine.dispose()

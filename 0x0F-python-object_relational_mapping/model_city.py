@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """this script is the city model class """
-from from sqlalchemy import Column, String, Integer
+from from sqlalchemy import Column, String, Integer, ForeignKey
 from model_state import Base
 
 class City(Base):

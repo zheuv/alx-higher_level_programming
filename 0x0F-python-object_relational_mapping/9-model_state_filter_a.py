@@ -13,7 +13,7 @@ if __name__ == "__main__":
         pool_pre_ping=True,
     )
     Session = sessionmaker(bind=engine)
-    session = Session(engine)
+    session = Session()
     for instance in session.query(State).filter(State.name.like('%a%')).all():
         print("{}: {}".format(instance.id, instance.name))
     engine.dispose()

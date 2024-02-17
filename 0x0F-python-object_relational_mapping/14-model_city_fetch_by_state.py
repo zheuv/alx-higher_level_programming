@@ -1,4 +1,4 @@
-#!/usr/bin/python3 
+#!/usr/bin/python3
 """ this script lists the cities in the cities table """
 
 from model_city import City
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     instances = session.query(City, State).\
-            join(State, State.id == City.state_id).all()
+        join(State, State.id == City.state_id).all()
     if instances:
         for city, state in instances:
             print(f"{state.name}: ({city.id}) {city.name}")

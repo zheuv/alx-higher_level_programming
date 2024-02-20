@@ -17,4 +17,7 @@ if __name__ == "__main__":
     first = session.query(State).first()
     if first is not None:
         print("{}: {}".format(first.id, first.name))
+    else:
+        print("Nothing")
+        print()
     engine.dispose()

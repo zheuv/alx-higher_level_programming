@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ the function in this module returns the peak in an unsorted list """
 
+
 def find_peak(list):
     """this function finds a peak using biary search"""
     if list:
@@ -11,6 +12,6 @@ def find_peak(list):
             mid = (begin + end) // 2
             if list[mid] > list[mid + 1]:
                 end = mid
-            else: 
+            else:
                 begin = mid + 1
         return list[begin]

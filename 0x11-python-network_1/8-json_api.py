@@ -20,6 +20,6 @@ if __name__ == "__main__":
         if jsonfile:
             print("[{}] {}".format(jsonfile["id"], jsonfile["name"]))
         else:
-            print("Not a valid JSON")
+            print("No result")
     except Exception:
         print("Not a valid JSON")
